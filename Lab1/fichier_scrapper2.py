@@ -27,32 +27,30 @@ results=[]
 repos=soup.find_all("div", class_=lambda c: c and "resultRow" in c)
 print(f"Nombre de repos trouvés : {len(repos)}")
 
-for repo in repos:                                              # ← DÉBUT boucle
-
-    # Titre — on cherche le <a> à l'intérieur du div search-title
+for repo in repos:                                             
     title_div = repo.find("div", class_=lambda c: c and "search-title" in c)
     if title_div:
-        lien = title_div.find("a")                             # ← le <a> qui a le href
+        lien = title_div.find("a")  
         title = lien.text.strip() if lien else "N/A"
         repo_url = "https://github.com" + lien["href"] if lien else "N/A"
     else:
         title = "N/A"
         repo_url = "N/A"
 
-    # Description
+
     desc_tag = repo.find("div", class_=lambda c: c and "Content" in c)
     description = desc_tag.text.strip() if desc_tag else "N/A"
 
-    # Étoiles
+
     stars_tag = repo.find("a", class_=lambda c: c and "stargazersLink" in c)
     etoiles = stars_tag.text.strip() if stars_tag else "0"
 
-    results.append({                                           # ← DANS la boucle
+    results.append({                                         
         "title": title,
         "url": repo_url,
         "description": description,
         "etoiles": etoiles,
-    })                                                         # ← FIN boucle
+    })                                                        
 
 df = pd.DataFrame(results)
 print(df)
