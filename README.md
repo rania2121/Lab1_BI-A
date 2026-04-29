@@ -3,6 +3,8 @@
 2/I was able to create a virtual environment py_env
 3/I was able to activate py_env
 4/I was able to install the libraries: pip install requests beautifulsoup4 pandas
-
+#Pour le deuxième lab:
+1/j'ai télachargé:pip install selenium
+2/J'ai téléchargé le driver :pip install webdriver-manager
 
 
