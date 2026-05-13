@@ -4,6 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 options = webdriver.ChromeOptions()
+options.add_argument("--headless")
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 url = "https://www.producthunt.com/search?q=mental+health+ai"
 driver.get(url)
