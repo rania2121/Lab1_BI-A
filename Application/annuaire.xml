@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<annuaire>
+    <contact titre="M." techno="Java">
+        <nom>Dupont</nom>
+        <prenom>Jean</prenom>
+        <coordonnees>
+            <telephone>12 34 56 78 90</telephone>
+            <email>jean@gmail.com</email>
+            <email>dupont@yahoo.fr</email>
+        </coordonnees>
+    </contact>
+</annuaire>
